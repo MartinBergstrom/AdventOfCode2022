@@ -19,12 +19,12 @@ public class Day5 {
     private static String solvePart1() throws Exception {
         final List<Stack<Character>> supplyStack = initializeSupplyStack();
 
-        genericSolve(((nbrOfCrates, fromColumn, toColumn) -> {
+        genericSolve((nbrOfCrates, fromColumn, toColumn) -> {
             for (int i = 0; i < nbrOfCrates; i++) {
                 Character character = supplyStack.get(fromColumn - 1).pop();
                 supplyStack.get(toColumn - 1).push(character);
             }
-        }));
+        });
 
         return topCrateString(supplyStack);
     }
